@@ -1,0 +1,11 @@
+messages:
+  general:
+    prefix: "<dark_gray> | </dark_gray>"
+    only-players: "<red>Только игроки могут писать эту комманду!</red>"
+    no-permission: "<red>У вас нету разрешения!</red>"
+    usage: "Использование: <b>/clan <create||reload></b>"
+    insufficient-arguments: "<red>Недостаточно аргументов!</red>"
+    error: "<red>Произошла ошибка!</red>"
+  create-clan:
+    usage: "Использование: <b>/clan create <имя></b>"
+    created: "<green>Клан успешно создан!</green>"
