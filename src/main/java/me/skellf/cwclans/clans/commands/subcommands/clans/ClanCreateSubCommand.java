@@ -1,12 +1,12 @@
-package me.skellf.cwclans.commands.subcommands;
+package me.skellf.cwclans.clans.commands.subcommands.clans;
 
-import me.skellf.cwclans.commands.ClanCommand;
+import me.skellf.cwclans.clans.commands.CWClansCommand;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class ClanCreate extends ClanCommand {
+public class ClanCreateSubCommand extends CWClansCommand {
 
     @Override
     public boolean execute(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {

@@ -36,6 +36,7 @@ public class MessageConfig {
         newMessages.put("clan-created", config.getString("messages.create-clan.created"));
         newMessages.put("error", config.getString("messages.general.error"));
         newMessages.put("insufficient-arguments", config.getString("messages.general.insufficient-arguments"));
+        newMessages.put("reloaded", config.getString("messages.general.reloaded"));
 
         return newMessages;
     }

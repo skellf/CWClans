@@ -1,5 +1,7 @@
 package me.skellf.cwclans;
 
+import me.skellf.cwclans.clans.commands.tabcomplete.ClansTabCompleter;
+import me.skellf.cwclans.clans.listener.DeathListener;
 import me.skellf.cwclans.db.DBManager;
 import me.skellf.cwclans.utils.ClanManager;
 import me.skellf.cwclans.utils.CommandDispatcher;
@@ -18,14 +20,22 @@ public final class CWClans extends SimplePlugin {
 
     @Override
     public void onPluginStart() {
-        // Plugin startup logic
+
+        log.info("""
+                
+                 ██████ ██     ██  ██████ ██       █████  ███    ██ ███████\s
+                ██      ██     ██ ██      ██      ██   ██ ████   ██ ██     \s
+                ██      ██  █  ██ ██      ██      ███████ ██ ██  ██ ███████\s
+                ██      ██ ███ ██ ██      ██      ██   ██ ██  ██ ██      ██\s
+                 ██████  ███ ███   ██████ ███████ ██   ██ ██   ████ ███████\s
+                                        developer: skellf, version: 1.0    \s
+                """);
 
         this.saveDefaultConfig();
         this.saveConfig();
 
+        log.info("Loading DB...");
         dbManager = new DBManager(log);
-        messageConfig = new MessageConfig(getConfig(), messageConfig.loadMessages());
-        clanManager = new ClanManager(messageConfig, dbManager);
 
         try {
             dbManager.connect();
@@ -35,7 +45,18 @@ public final class CWClans extends SimplePlugin {
             e.printStackTrace();
         }
 
+        log.info("Loading messages...");
+        messageConfig = new MessageConfig(getConfig(), messageConfig.loadMessages());
+        log.info("Successfully loaded messages!");
+
+        clanManager = new ClanManager(messageConfig, dbManager);
+
+        //Listeners
+        this.getServer().getPluginManager().registerEvents(new DeathListener(clanManager), this);
+
+        // Commands
         this.getCommand("clans").setExecutor(new CommandDispatcher());
+        this.getCommand("clans").setTabCompleter(new ClansTabCompleter());
     }
 
     @Override
@@ -49,6 +70,10 @@ public final class CWClans extends SimplePlugin {
 
     public DBManager getDbManager() {
         return dbManager;
+    }
+
+    public void reloadMessageConfig() {
+        messageConfig = new MessageConfig(getConfig(), messageConfig.loadMessages());
     }
 
     public MessageConfig getMessageConfig() {

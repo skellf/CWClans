@@ -1,18 +1,16 @@
-package me.skellf.cwclans.commands;
+package me.skellf.cwclans.clans.commands;
 
 import me.skellf.cwclans.CWClans;
 import me.skellf.cwclans.db.DBManager;
 import me.skellf.cwclans.utils.ClanManager;
 import me.skellf.cwclans.utils.config.MessageConfig;
-import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 
-public abstract class ClanCommand {
+public abstract class CWClansCommand {
 
     protected final CWClans plugin = CWClans.getInstance();
-    protected final MiniMessage mm = MiniMessage.miniMessage();
     protected final DBManager db = CWClans.getInstance().getDbManager();
     protected final MessageConfig mc = CWClans.getInstance().getMessageConfig();
     protected final ClanManager cm = CWClans.getInstance().getClanManager();

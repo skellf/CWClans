@@ -6,6 +6,7 @@ messages:
     usage: "Использование: <b>/clan <create||reload></b>"
     insufficient-arguments: "<red>Недостаточно аргументов!</red>"
     error: "<red>Произошла ошибка!</red>"
+    reloaded: "<green>Плагин успешно перезагружен!</green>"
   create-clan:
     usage: "Использование: <b>/clan create <имя></b>"
     created: "<green>Клан успешно создан!</green>"

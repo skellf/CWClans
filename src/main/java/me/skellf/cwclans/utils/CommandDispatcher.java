@@ -1,8 +1,9 @@
 package me.skellf.cwclans.utils;
 
 import me.skellf.cwclans.CWClans;
-import me.skellf.cwclans.commands.ClanCommand;
-import me.skellf.cwclans.commands.subcommands.ClanCreate;
+import me.skellf.cwclans.clans.commands.CWClansCommand;
+import me.skellf.cwclans.clans.commands.subcommands.clans.ClanCreateSubCommand;
+import me.skellf.cwclans.clans.commands.subcommands.clans.ReloadSubCommand;
 import me.skellf.cwclans.utils.config.MessageConfig;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -14,13 +15,14 @@ import java.util.Map;
 
 public class CommandDispatcher implements CommandExecutor {
 
-    private final Map<String, ClanCommand> subCommands = new HashMap<>();
+    private final Map<String, CWClansCommand> subCommands = new HashMap<>();
     private final MessageConfig mc;
 
     public CommandDispatcher() {
         this.mc = CWClans.getInstance().getMessageConfig();
 
-        subCommands.put("create", new ClanCreate());
+        subCommands.put("create", new ClanCreateSubCommand());
+        subCommands.put("reload", new ReloadSubCommand());
     }
 
     @Override
@@ -29,7 +31,7 @@ public class CommandDispatcher implements CommandExecutor {
             sender.sendMessage(mc.getMessage("usage"));
         }
 
-        ClanCommand subCommand = subCommands.get(args[0].toLowerCase());
+        CWClansCommand subCommand = subCommands.get(args[0].toLowerCase());
         if (subCommand != null) {
             return subCommand.execute(sender, command, s, args);
         } else  {

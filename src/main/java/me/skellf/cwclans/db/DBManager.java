@@ -27,7 +27,8 @@ public class DBManager {
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     name TEXT NOT NULL UNIQUE,
                     leader TEXT NOT NULL,
-                    members TEXT NOT NULL
+                    members TEXT NOT NULL,
+                    coins INTEGER DEFAULT 0,
                     );
                     """
             )) {

@@ -16,5 +16,8 @@ permissions:
     default: op
     children:
       cwclans.createclan: true
+      cwclans.reload: true
   cwclans.createclan:
     description: Permission for using main command
+  cwclans.reload:
+    description: Permission for reloading the plugin
