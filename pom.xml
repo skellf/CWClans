@@ -99,5 +99,18 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>com.github.Zrips</groupId>
+            <artifactId>CMILib</artifactId>
+            <version>1.4.7.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.Zrips</groupId>
+            <artifactId>CMI</artifactId>
+            <version>9.7.0.1</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/CMI-API9.7.0.1.jar</systemPath>
+        </dependency>
     </dependencies>
 </project>

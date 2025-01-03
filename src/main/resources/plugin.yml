@@ -3,6 +3,9 @@ version: '1.0'
 main: me.skellf.cwclans.CWClans
 api-version: '1.20'
 load: STARTUP
+depend:
+  - CMI
+  - CMILib
 authors: [ skellf ]
 description: Plugin for adding a clans mechanic on server
 commands:
@@ -17,7 +20,17 @@ permissions:
     children:
       cwclans.createclan: true
       cwclans.reload: true
+      cwclans.remove: true
+      cwclans.menu: true
   cwclans.createclan:
     description: Permission for using main command
   cwclans.reload:
     description: Permission for reloading the plugin
+  cwclans.remove:
+    description: Permission for removing clan
+    children:
+      cwclans.remove.own: true
+  cwclans.remove.own:
+    description: Permission for removing only owned clans
+  cwclans.menu:
+    description: Permission for opening clans menu

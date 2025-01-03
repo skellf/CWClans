@@ -20,6 +20,7 @@ public class ClansTabCompleter implements TabCompleter {
         subCommands.add("reload");
         subCommands.add("menu");
         subCommands.add("info");
+        subCommands.add("leave");
     }
 
     @Override
@@ -29,7 +30,7 @@ public class ClansTabCompleter implements TabCompleter {
             return getMatchingSubCommands(args[0]);
         }
 
-        return List.of();
+        return null;
     }
 
     private List<String> getMatchingSubCommands(String input) {

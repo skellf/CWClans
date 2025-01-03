@@ -29,6 +29,8 @@ public class DBManager {
                     leader TEXT NOT NULL,
                     members TEXT NOT NULL,
                     coins INTEGER DEFAULT 0,
+                    lore TEXT DEFAULT '',
+                    rating INTEGER DEFAULT 0
                     );
                     """
             )) {

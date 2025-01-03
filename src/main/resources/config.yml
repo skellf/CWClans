@@ -7,6 +7,13 @@ messages:
     insufficient-arguments: "<red>Недостаточно аргументов!</red>"
     error: "<red>Произошла ошибка!</red>"
     reloaded: "<green>Плагин успешно перезагружен!</green>"
-  create-clan:
-    usage: "Использование: <b>/clan create <имя></b>"
-    created: "<green>Клан успешно создан!</green>"
+  clan:
+    death: "<red>Вы умерли и потеряли <gold>1</gold> клановую монету!</red>"
+    create:
+      usage: "Использование: <b>/clan create <имя></b>"
+      created: "<green>Клан успешно создан!</green>"
+      no-money: "<red>У вас нету <color:#6BCF3A>100000</color>□ для создания клана!</red>"
+    remove:
+      usage: "Использование: <b>/clan remove <имя></b>"
+      not-found: "<red>Клан не найден!</red>"
+      removed: "<green>Клан успешно удален!</green>"

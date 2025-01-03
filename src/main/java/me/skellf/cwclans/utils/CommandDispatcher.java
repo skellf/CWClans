@@ -2,7 +2,9 @@ package me.skellf.cwclans.utils;
 
 import me.skellf.cwclans.CWClans;
 import me.skellf.cwclans.clans.commands.CWClansCommand;
+import me.skellf.cwclans.clans.commands.subcommands.MenuSubCommand;
 import me.skellf.cwclans.clans.commands.subcommands.clans.ClanCreateSubCommand;
+import me.skellf.cwclans.clans.commands.subcommands.clans.ClanRemoveSubCommand;
 import me.skellf.cwclans.clans.commands.subcommands.clans.ReloadSubCommand;
 import me.skellf.cwclans.utils.config.MessageConfig;
 import org.bukkit.command.Command;
@@ -23,6 +25,8 @@ public class CommandDispatcher implements CommandExecutor {
 
         subCommands.put("create", new ClanCreateSubCommand());
         subCommands.put("reload", new ReloadSubCommand());
+        subCommands.put("remove", new ClanRemoveSubCommand());
+        subCommands.put("menu", new MenuSubCommand());
     }
 
     @Override

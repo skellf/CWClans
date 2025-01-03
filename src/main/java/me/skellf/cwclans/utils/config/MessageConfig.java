@@ -32,11 +32,16 @@ public class MessageConfig {
         newMessages.put("only-players", config.getString("messages.general.only-players"));
         newMessages.put("no-permission", config.getString("messages.general.no-permission"));
         newMessages.put("usage", config.getString("messages.usage"));
-        newMessages.put("clan-create.usage", config.getString("messages.create-clan.usage"));
-        newMessages.put("clan-created", config.getString("messages.create-clan.created"));
+        newMessages.put("clan.create.usage", config.getString("messages.create.usage"));
+        newMessages.put("clan.create.created", config.getString("messages.create.created"));
         newMessages.put("error", config.getString("messages.general.error"));
         newMessages.put("insufficient-arguments", config.getString("messages.general.insufficient-arguments"));
         newMessages.put("reloaded", config.getString("messages.general.reloaded"));
+        newMessages.put("clan.remove.usage", config.getString("messages.clan.remove.usage"));
+        newMessages.put("clan.death", config.getString("messages.clan.death"));
+        newMessages.put("clan.create.no-money", config.getString("messages.clan.create.no-money"));
+        newMessages.put("clan.remove.not-found", config.getString("messages.clan.remove.not-found"));
+        newMessages.put("clan.remove.removed", config.getString("messages.clan.remove.removed"));
 
         return newMessages;
     }

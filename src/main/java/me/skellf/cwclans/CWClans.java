@@ -1,6 +1,7 @@
 package me.skellf.cwclans;
 
 import me.skellf.cwclans.clans.commands.tabcomplete.ClansTabCompleter;
+import me.skellf.cwclans.clans.listener.DamageListener;
 import me.skellf.cwclans.clans.listener.DeathListener;
 import me.skellf.cwclans.db.DBManager;
 import me.skellf.cwclans.utils.ClanManager;
@@ -52,7 +53,8 @@ public final class CWClans extends SimplePlugin {
         clanManager = new ClanManager(messageConfig, dbManager);
 
         //Listeners
-        this.getServer().getPluginManager().registerEvents(new DeathListener(clanManager), this);
+        this.getServer().getPluginManager().registerEvents(new DeathListener(clanManager, messageConfig), this);
+        this.getServer().getPluginManager().registerEvents(new DamageListener(clanManager), this);
 
         // Commands
         this.getCommand("clans").setExecutor(new CommandDispatcher());

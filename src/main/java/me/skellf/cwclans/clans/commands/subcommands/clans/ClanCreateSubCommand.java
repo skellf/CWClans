@@ -1,5 +1,6 @@
 package me.skellf.cwclans.clans.commands.subcommands.clans;
 
+import com.Zrips.CMI.Containers.CMIUser;
 import me.skellf.cwclans.clans.commands.CWClansCommand;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -27,7 +28,15 @@ public class ClanCreateSubCommand extends CWClansCommand {
         }
 
         String name = args[1];
-        cm.createClan(player, name);
+
+        CMIUser user = CMIUser.getUser(player);
+
+        if (user.hasMoney(100000.0)) {
+            user.withdraw(100000.0);
+            cm.createClan(player, name);
+        } else {
+            player.sendMessage(mc.getMessage("clan.create.no-money"));
+        }
 
         return true;
     }
